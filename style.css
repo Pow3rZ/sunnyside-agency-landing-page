@@ -429,6 +429,7 @@ header {
 
 .attribution a {
   color: #3e52a3;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 816px) {
