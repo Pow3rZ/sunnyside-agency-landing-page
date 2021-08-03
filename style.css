@@ -27,7 +27,7 @@ header {
   min-height: 60vh;
 }
 
-.main-nav {
+#main-nav {
   background-color: #3dbeff;
   position: fixed;
   z-index: 100;
@@ -45,7 +45,7 @@ header {
   padding: 2rem 1rem;
 }
 
-.main-nav #mobile-menu-btn {
+#main-nav #mobile-menu-btn {
   background: none;
   border: none;
   cursor: pointer;
