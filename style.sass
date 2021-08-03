@@ -1,0 +1,387 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap')
+$fontFamily1: 'Barlow', sans-serif
+$fontFamily2: 'Fraunces', serif
+
+$fontSize: 18px
+
+// Colors
+$softRed: hsl(7, 99%, 70%)
+$softRedFaint: hsla(7, 99%, 70%, .4)
+$yellow: hsl(51, 100%, 49%)
+$yellowFaint: hsla(51, 100%, 49%, .4)
+$graphicDesighTextColor: hsl(167, 40%, 24%)
+$photopgraphyTextColor: hsl(198, 62%, 26%)
+$footerTextColor: hsl(168, 34%, 41%)
+$footerBackgroundColor: hsl(167, 44%, 70%)
+
+$mainHeading: hsl(212, 27%, 19%) 
+$mainParagraphs: hsl(213, 9%, 39%) 
+$testimonialAccents: hsl(232, 10%, 55%)
+$testimonialOccupation: hsl(210, 4%, 67%)
+$mainBackground: hsl(26, 100%, 99%)
+
+// Setup
+*, *::before, *::after
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+html
+    background-color: $mainBackground
+    font-size: $fontSize
+    font-family: $fontFamily1
+
+// Header
+
+header
+    background-image: url('./images/mobile/image-header.jpg')
+    background-size: cover
+    background-position: center bottom
+    display: flex
+    flex-direction: column
+    text-align: center
+    min-height: 60vh
+
+.main-nav
+    background-color: 	hsl(200, 100%, 62%)
+    position: fixed
+    z-index: 100
+    top: 0
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 2rem 1rem
+    #mobile-menu-btn
+        background: none
+        border: none
+        cursor: pointer
+
+.mobile-nav
+    position: absolute
+    left: 1rem
+    right: 1rem
+    top: 100%
+    list-style: none
+    background-color: white
+    background-clip: padding-box
+    padding: 2rem
+    border-right: 1rem solid white
+    border-top: 1rem solid transparent
+    a
+        text-decoration: none
+        display: inline-block
+        padding: 1rem 2rem
+        color: $testimonialAccents
+    .contact
+        background-color: $yellow
+        border-radius: 2rem
+        font-family: $fontFamily2
+        text-transform: uppercase
+        font-size: .9rem
+        color: $mainHeading
+    &.hidden
+        display: none
+
+.desktop-nav
+    list-style: none
+    display: none
+    li
+        float: left
+        padding: 0 1rem
+        a
+            text-decoration: none
+            color: white
+            display: block
+            padding: 1rem 1.5rem
+            transition: color .3s ease-in-out
+            &:hover
+                color: $mainHeading
+            &.contact
+                text-transform: uppercase
+                font-family: $fontFamily2
+                background-color: white
+                color: $mainHeading
+                font-weight: 900
+                border-radius: 2rem
+                transition: background-color .3s ease-in-out, color .3s ease-in-out
+                &:hover
+                    background-color: rgba(255, 255, 255, .4)
+                    color: white
+
+
+
+
+.hero
+    margin-top: 8rem
+
+    h1
+        color: white
+        font-family: $fontFamily2
+        font-weight: 900
+        text-transform: uppercase
+        font-size: 2.5rem
+        letter-spacing: .2rem
+        margin-bottom: 2.5rem
+
+// Main
+
+.card
+    width: 100%
+    text-align: center
+
+.img-card 
+    overflow: hidden
+    img
+        width: 100%
+        display: block
+
+.egg
+    grid-area: egg
+
+.glass
+    grid-area: glass
+
+.text-card
+    padding: 2rem 1rem
+    h2
+        font-family: $fontFamily2
+        font-size: 2rem
+        font-weight: 900
+        color: $mainHeading
+        padding: 2rem 0
+    p
+        color: $mainParagraphs
+        line-height: 1.4rem
+        margin-bottom: 2rem
+    button
+        margin-bottom: 2rem
+        text-transform: uppercase
+        font-family: $fontFamily2
+        font-weight: 900
+        font-size: 1rem
+        background: none
+        border: none
+        cursor: pointer
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            bottom: 1px
+            left: -5px
+            right: -5px
+            height: .5rem
+            border-radius: 1rem
+            z-index: -100
+            transition: background-color .4s ease-in-out
+        &.yellow
+            &::after
+                background-color: $yellowFaint
+            &:hover::after
+                background-color: $yellow
+        &.red
+            &::after
+                background-color: $softRedFaint
+            &:hover::after
+                background-color: $softRed
+
+.transform
+    grid-area: transform
+
+.stand-out
+    grid-area: standOut
+
+.img-text-card
+    background-size: cover
+    background-position: center top
+    padding: 20rem 1rem 2rem
+    h2
+        font-family: $fontFamily2
+        font-weight: 900
+        margin-bottom: 1.5rem
+    p
+        margin-bottom: 1.5rem
+        line-height: 1.4rem
+    &.graphic-design
+        background-image: url('./images/mobile/image-graphic-design.jpg')
+        color: $graphicDesighTextColor
+    &.photography
+        background-image: url('./images/mobile/image-photography.jpg')
+        color: $photopgraphyTextColor
+
+// Testimonials
+
+.testimonials
+    text-align: center
+    padding: 2rem 1rem
+    h2
+        font-family: $fontFamily2
+        color: $testimonialAccents
+        letter-spacing: .2rem
+        text-transform: uppercase
+        font-size: 1rem
+        padding: 2rem 0
+    .testimonial
+        padding: 2rem 1rem
+        img
+            width: 5rem
+            border-radius: 50%
+        p
+            color: $mainParagraphs
+            padding: 2rem 0
+        h3
+            font-family: $fontFamily2
+            font-weight: 900
+            color: $mainHeading
+            padding-bottom: .8rem
+        h4
+            color: $testimonialOccupation
+            font-size: .8rem
+            font-weight: 600
+
+// Projects
+
+#projects
+    display: grid
+    grid-template-columns: 1fr 1fr
+    img
+        display: block
+        width: 100%
+
+// Footer
+
+.main-footer
+    background-color: $footerBackgroundColor
+    color: $footerTextColor
+    text-align: center
+    padding: 3rem 1rem
+
+.logo-footer
+    margin-bottom: 2rem
+    
+.footer-nav
+    margin-bottom: 2rem
+    ul
+        list-style: none
+        width: 100%
+        display: flex
+        justify-content: space-around
+    a
+        text-decoration: none
+        color: inherit
+        transition: color .3s ease-in-out
+        &:hover
+            color: white
+
+.social-media-section
+    padding-top: 2rem
+    ul
+        list-style: none
+        display: flex
+        justify-content: center
+        li
+            padding: 0 .7rem
+    .social-icon
+        display: block
+        padding: .6rem
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        background-color: $footerTextColor
+        transition: background-color .3s ease-in-out
+        &:hover
+            background-color: white
+        &.icon-facebook
+            mask-image: url('./images/icon-facebook.svg')
+            mask-size: contain
+            mask-repeat: no-repeat
+            mask-position: center
+        &.icon-instagram
+            mask-image: url('./images/icon-instagram.svg')
+            mask-size: contain
+            mask-repeat: no-repeat
+            mask-position: center
+        &.icon-twitter
+            mask: url('./images/icon-twitter.svg')
+            mask-size: contain
+            mask-repeat: no-repeat
+            mask-position: center
+        &.icon-pinterest
+            mask: url('./images/icon-pinterest.svg')
+            mask-size: contain
+            mask-repeat: no-repeat
+            mask-position: center
+
+
+.attribution
+    font-size: small
+    text-align: center
+    margin: 2rem
+    a
+        color: hsl(228, 45%, 44%)
+    
+
+@media screen and ( min-width: 816px )
+    header
+        background-image: url('./images/desktop/image-header.jpg')
+
+    #mobile-menu-btn
+        display: none
+    .desktop-nav
+        display: block
+    
+    #about
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: 1fr 1fr 1fr
+        grid-template-areas: 'transform egg' 'glass standOut' 'graphicDesign photography'
+
+    .img-card
+        img
+            height: 100%
+            width: auto
+
+    .text-card
+        display: flex
+        flex-direction: column
+        align-items: start
+        text-align: left
+        padding: 15%
+
+    .img-text-card
+        padding: 20rem 20% 2rem
+        &.graphic-design
+            background-image: url('./images/desktop/image-graphic-design.jpg')
+            color: $graphicDesighTextColor
+        &.photography
+            background-image: url('./images/desktop/image-photography.jpg')
+            color: $photopgraphyTextColor
+
+    .testimonials
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        padding: 4rem 2rem
+        h2
+            flex-basis: 100%
+        .testimonial
+            flex-basis: 30%
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: space-between
+
+    #projects
+        grid-template-columns: 1fr 1fr 1fr 1fr
+
+    .footer-nav
+        ul
+            width: 20rem
+            margin: 0 auto
+
+@media screen and ( min-width: 1220px )
+    .img-card
+        img
+            heigh: auto
+            width: 100%
