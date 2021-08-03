@@ -369,6 +369,8 @@ header {
   background-color: #458c7e;
   -webkit-transition: background-color .3s ease-in-out;
   transition: background-color .3s ease-in-out;
+  color: transparent;
+  font-size: 0;
 }
 
 .social-media-section .social-icon:hover {
